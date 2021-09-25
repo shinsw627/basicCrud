@@ -1,0 +1,81 @@
+body{
+
+}
+
+.navbar{
+    
+}
+
+
+.navtitle {
+    margin: auto;
+}
+
+.input.is-info{
+    display: inline-block;
+    width: 75%;
+}
+
+.input.is-danger{
+    display: inline-block;
+    width: 25%;
+}
+
+.textarea.is-info{
+    
+    
+    height: 450px;
+}
+
+.post-modify{
+    margin: 50px 50px 30px 50px;
+}
+
+.button.is-black{
+    display: block;
+    margin: auto;
+
+    
+}
+
+.buttoncontrol{
+    width: 300px;
+    display:inline;
+    margin: auto;
+}
+
+.invisiblebuttoncontrol{
+    display: inline-block;
+    width: 32%;
+}
+
+.button.is-black{
+    display: inline-block;
+    margin: 20px;
+}
+
+.modal-content{
+    text-align: center;
+}
+
+
+.input.is-rounded{
+    display: block;
+    width: 200px;
+    margin: auto;
+}
+
+.buttoncontrol2{
+    width: 300px;
+    display:inline;
+    margin: auto;
+}
+.invisiblebuttoncontrol2{
+    display: block;
+    width: 10%;
+}
+
+.button.is-black.a{
+    display: inline-block;
+    width: 100px;
+}
