@@ -68,10 +68,11 @@
                         let chkPw = postDetail['contentPw']
                         let htmlTemp = `<div class="post-modify">
                               <div>
+                                <label class="label">제목</label>
                                 <input class="input is-info" id="postTitle" type="text" placeholder="제목을 입력하세요" value="${postDetail['title']}">
                               </div>
                             
-                            <textarea class="textarea is-info" id="postContent" placeholder="내용을 입력하세요">${postDetail['content']}</textarea>
+                              <label class="label">내용</label><textarea class="textarea is-info" id="postContent" placeholder="내용을 입력하세요">${postDetail['content']}</textarea>
                             
                             </div>
                             <button class="button is-black" onclick="openModal(${chkPw})">수정하기</button>`
