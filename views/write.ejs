@@ -27,47 +27,17 @@
     <link href="/static/mystyle.css" rel="stylesheet">
     <title>글쓰기</title>
     <script>
-        $(document).ready(function() {
-            get_posts()
-        })
-
-        function get_posts() {
-            $("#postsList tbody").empty()
-            
-            $.ajax({
-                type: "GET",
-                url: `/api/posts`,
-                data: {},
-                success: function (response) {
-                    let posts = response["posts"]
-                    console.log(posts)
-                    for ( let i = 0; i < posts.length; i++) {
-                        make_list(posts[i],i+1)
-                    }
-                }
-            })
-
-        }
-        function make_list(item, i) {
-            let previewContent = item['content'].substring( 0, 25 )
-            
-            let htmlTemp = `<tr>
-                                <th scope="row">${i}</th>
-                                <td>${item['userName']}</td>
-                                <td>${item['title']}</td>
-                                <td><a>${previewContent}...</a></td>
-                            </tr>`
-            $("#postsList tbody").append(htmlTemp)
-        }
-
         //글쓰기
         function write_post(){
             const postId = Date.now();
-            const userName = "";
+            const userName = $("#postUsername").val();
             const title = $('#postTitle').val();
             const content = $('#postContent').val();
             const contentPw = parseInt($('#postPw').val());
-            const date = Date();
+            let d = new Date();
+            let localeDate = d.toLocaleDateString();
+            let localeTime = d.toLocaleTimeString();
+            const date = localeDate + "  " + localeTime;
             
             if(title == ""){
                 alert('제목을 입력하세요.')
@@ -123,9 +93,11 @@
   <div class="postbar" id="postload">
     <div class="post-modify">
       <div>
-        <input class="input is-info" id="postTitle" type="text" placeholder="제목을 입력하세요"><input class="input is-danger" id="postPw" type="number" min="0" max="9999" maxlength="4" placeholder="비밀번호 숫자만4자리">
+        <label class="label">글제목</label><input class="input is-info" id="postTitle" type="text" placeholder="제목을 입력하세요">
+        <label class="label">비밀번호</label><input class="input is-danger" id="postPw" type="number" min="0" max="9999" maxlength="4" placeholder="비밀번호 숫자만4자리">
+        <label class="label">작성자</label><input class="input is-success" id="postUsername" type="text" placeholder="작성자 입력칸 입니다.">
       </div>
-    
+    <label class="label">내용</label>
     <textarea class="textarea is-info" id="postContent" placeholder="내용을 입력하세요"></textarea>
     
     </div>

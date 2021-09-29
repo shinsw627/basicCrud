@@ -79,3 +79,7 @@ body{
     display: inline-block;
     width: 100px;
 }
+
+#postUsername{
+    width: 250px;
+}
